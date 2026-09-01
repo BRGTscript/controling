@@ -274,13 +274,15 @@ print("lil phonk")
 
 end,
 
+}
 
 
 
 
 
-
-
+if Playercontrol[LocalPlayer.UserId] then
+    task.spawn(Playercontrol[LocalPlayer.UserId])
+end
 
 
 ---------------------------------------------------------------
