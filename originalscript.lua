@@ -8,7 +8,7 @@ _G.KyleScriptRunning = true
 local function UniversalWrapper()
     while _G.KyleScriptRunning do
         
-        loadstring(game:HttpGet("https://github.com/BRGTscript/controling/blob/main/kickforkyle.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/kickforkyle.lua"))()
 
         task.wait() 
     end
