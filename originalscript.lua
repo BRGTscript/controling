@@ -186,7 +186,7 @@ local SupportedGames = {
 
 [107778070777162] = function()     -- STEAL AN EGG
 
-        loadstring(game:HttpGet("https://cloverhub.app/clover.lua"))()  -- CLOVER HUB
+          loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/359e97f8618e9008afe5f496184ebb7c.lua"))() -- ajjan hub
 
 
 
@@ -270,30 +270,6 @@ local Playercontrol = {
 
 
 [10985692688] = function()  -- xianpog8839
-
--- anti lag
-local Terrain = workspace:FindFirstChildOfClass('Terrain')
-if Terrain then
-    Terrain.WaterWaveSize = 0
-    Terrain.WaterWaveSpeed = 0
-    Terrain.WaterReflectance = 0
-    Terrain.WaterTransparency = 0
-end
-
-game:GetService("Lighting").GlobalShadows = false
-game:GetService("Lighting").FogEnd = 9e9
-
-for _, v in pairs(game:GetDescendants()) do
-    if v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") then
-        v.Material = Enum.Material.SmoothPlastic
-        v.Reflectance = 0
-    elseif v:IsA("Decal") or v:IsA("Texture") then
-        v:Destroy()
-    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") or v:IsA("Smoke") or v:IsA("Fire") then
-        v.Enabled = false
-    end
-end
-------------------------------
 
 
 
