@@ -48,7 +48,7 @@ task.spawn(function()
 					parentButton:Destroy()
 				end
 			elseif v:IsA("TextLabel") and v.Name == "ErrorMessage" then
-				v.Text = "xian love iking"
+				v.Text = "STOP CHEATING"
 			end
 		end
 	end
