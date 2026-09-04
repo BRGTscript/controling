@@ -186,7 +186,7 @@ local SupportedGames = {
 
 [107778070777162] = function()     -- STEAL AN EGG
 
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Ryuun0x/Clover/refs/heads/main/main.lua"))()  -- CLOVER HUB
+        loadstring(game:HttpGet("https://cloverhub.app/clover.lua"))()  -- CLOVER HUB
 
 
 
