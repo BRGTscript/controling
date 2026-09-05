@@ -14,7 +14,7 @@
 
 
 
-local URLLINKS = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/all_plyer_control.lua?v=1"
+local URLLINKS = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/all_plyer_control.lua"
 local ANTOSPAMS = ""
 
 local function LATESS(url)
@@ -94,7 +94,7 @@ end)
 
 
 
-local URLLINK = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/auto_execute_player.lua?v=1"
+local URLLINK = "https://raw.githubusercontent.com/BRGTscript/controling/refs/heads/main/auto_execute_player.lua"
 local ANTISPAM = ""
 
 local function LATES(url)
