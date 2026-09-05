@@ -186,7 +186,7 @@ local SupportedGames = {
 
 [107778070777162] = function()     -- STEAL AN EGG
 
-          loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/359e97f8618e9008afe5f496184ebb7c.lua"))() -- ajjan hub
+          loadstring(game:HttpGet("https://cloverhub.app/clover.lua"))() -- clover hub
 
 
 
